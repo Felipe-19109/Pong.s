@@ -141,15 +141,15 @@ Além disso, [testes/testes.s](testes/testes.s) reúne em um único arquivo 18 c
 
 ### Partida completa e testes automáticos
 
-Esta bateria complementa os testes do Ripes e está toda em [testes-simulador/](testes-simulador/). O `pong.s` foi montado **sem alterações** pelo assembler do LLVM (`clang --target=riscv32 -march=rv32i`), com o mesmo mapa de memória do Ripes: `.text` em `0x00000000`, `.data` em `0x10000000`, `sp = 0x7ffffff0`, LEDs em `0xF0000000` e D-Pad em `0xF0000DAC`. O binário foi executado num simulador RV32I em Python ([rv32i.py](testes-simulador/rv32i.py)), que decodifica as instruções de máquina e implementa as ecalls 1, 4 e 10. O assembler aceitar o programa com `-march=rv32i` confirma que ele não usa as extensões M ou C.
+Esta bateria complementa os testes do Ripes e está toda em [testes-automaticos/](testes-automaticos/). O `pong.s` foi montado **sem alterações** pelo assembler do LLVM (`clang --target=riscv32 -march=rv32i`), com o mesmo mapa de memória do Ripes: `.text` em `0x00000000`, `.data` em `0x10000000`, `sp = 0x7ffffff0`, LEDs em `0xF0000000` e D-Pad em `0xF0000DAC`. O binário foi executado num simulador RV32I em Python ([rv32i.py](testes-automaticos/rv32i.py)), que decodifica as instruções de máquina e implementa as ecalls 1, 4 e 10. O assembler aceitar o programa com `-march=rv32i` confirma que ele não usa as extensões M ou C.
 
-**34 casos aprovados** ([testes_pong.py](testes-simulador/testes_pong.py), [resultados](testes-simulador/resultados_testes.json)). Todos conferem `s0`–`s11` (101 a 112) e `sp` depois do retorno:
+**34 casos aprovados** ([testes_pong.py](testes-automaticos/testes_pong.py), [resultados](testes-automaticos/resultados_testes.json)). Todos conferem `s0`–`s11` (101 a 112) e `sp` depois do retorno:
 
 - 20 casos de `passo`: movimento livre; raquete sobe, desce, cima e baixo juntos, limites 1 e 19; as três paredes e o canto superior direito; rebatida no centro, na primeira e na última linha da raquete; bola passando acima e abaixo; game over; partida encerrada sem mudança; bola indo para a direita na coluna 1; rebatida junto com reflexo na parede; raquete movendo e rebatendo no mesmo quadro.
 - 3 casos de `pixel`, 6 de botões (`ler_botoes` e `esperar_controle`), 4 de desenho e estado.
 - 1 mutação: com `addi t5, t0, 4` trocado por `3`, o caso da última linha da raquete falha, como esperado.
 
-**Partida completa** ([partida.py](testes-simulador/partida.py)). O programa roda a partir de `main` com `DELAY = 1000`. Um jogador automático aperta a seta direita para começar e usa cima/baixo para seguir a bola; depois de 3 pontos, tenta se afastar para perder. Após o game over, solta os botões, aperta uma seta e joga uma segunda partida. Foram 3.174.959 instruções em 324 quadros. Console registrado ([console_partida.txt](testes-simulador/console_partida.txt)):
+**Partida completa** ([partida.py](testes-automaticos/partida.py)). O programa roda a partir de `main` com `DELAY = 1000`. Um jogador automático aperta a seta direita para começar e usa cima/baixo para seguir a bola; depois de 3 pontos, tenta se afastar para perder. Após o game over, solta os botões, aperta uma seta e joga uma segunda partida. Foram 3.174.959 instruções em 324 quadros. Console registrado ([console_partida.txt](testes-automaticos/console_partida.txt)):
 
 ```text
 PONG RV32I - aperte uma seta para comecar
@@ -163,15 +163,15 @@ Solte os botoes e aperte uma seta para reiniciar.
 Pontos: 1
 ```
 
-As imagens abaixo foram geradas a partir da matriz de LEDs simulada; **não são capturas de tela do Ripes**. A animação da partida inteira está em [partida.gif](testes-simulador/partida.gif).
+As imagens abaixo foram geradas a partir da matriz de LEDs simulada; **não são capturas de tela do Ripes**. A animação da partida inteira está em [partida.gif](testes-automaticos/partida.gif).
 
 | Início | Rebatida (Pontos: 1) | Game over | Segunda partida |
 |---|---|---|---|
-| ![Início](testes-simulador/partida1_inicio.png) | ![Rebatida](testes-simulador/partida1_rebatida_1.png) | ![Game over](testes-simulador/partida1_game_over.png) | ![Reinício](testes-simulador/partida2_em_andamento.png) |
+| ![Início](testes-automaticos/partida1_inicio.png) | ![Rebatida](testes-automaticos/partida1_rebatida_1.png) | ![Game over](testes-automaticos/partida1_game_over.png) | ![Reinício](testes-automaticos/partida2_em_andamento.png) |
 
 ### Vídeo
 
-Não há gravação em vídeo do Ripes desta versão. A animação [partida.gif](testes-simulador/partida.gif), gerada no simulador, mostra uma partida completa.
+Não há gravação em vídeo do Ripes desta versão. A animação [partida.gif](testes-automaticos/partida.gif), gerada no simulador, mostra uma partida completa.
 
 ## 6. Análise arquitetural
 
@@ -221,4 +221,4 @@ Essa comparação é estática. Não foram medidos aqui os ciclos de `__mulsi3` 
 
 ## 8. Limites da verificação
 
-O programa completo foi montado e executado no Ripes até a espera pela primeira seta, e os 20 casos controlados passaram nos dois modelos. As medições mostram o custo do cálculo de endereço, da espera e do redesenho. Não houve teste em hardware físico. A partida completa, com rebatidas, game over e reinício, foi executada no simulador RV32I de `testes-simulador/`, e os 34 casos de lá passaram. Faltam capturas do Ripes de uma partida interativa: as capturas do Ripes mostram a tela inicial e os testes de `passo`.
+O programa completo foi montado e executado no Ripes até a espera pela primeira seta, e os 20 casos controlados passaram nos dois modelos. As medições mostram o custo do cálculo de endereço, da espera e do redesenho. Não houve teste em hardware físico. A partida completa, com rebatidas, game over e reinício, foi executada no simulador RV32I de `testes-automaticos/`, e os 34 casos de lá passaram. Faltam capturas do Ripes de uma partida interativa: as capturas do Ripes mostram a tela inicial e os testes de `passo`.

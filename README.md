@@ -33,9 +33,9 @@ Solte os botoes e aperte uma seta para reiniciar.
 
 ![Tela inicial](docs/testes/tela-inicial.jpg)
 
-Partida completa executada no simulador RV32I de `testes-simulador/` (animação gerada pelo simulador, não é captura do Ripes):
+Partida completa executada no simulador RV32I de `testes-automaticos/` (animação gerada pelo simulador, não é captura do Ripes):
 
-![Partida simulada](testes-simulador/partida.gif)
+![Partida simulada](testes-automaticos/partida.gif)
 
 ## Testes e resultados
 
@@ -43,7 +43,7 @@ Foram feitas 40 verificações no Ripes CLI: 20 casos em Single-cycle e os mesmo
 
 [testes/testes.s](testes/testes.s) reúne 18 casos de `passo` num único arquivo que se confere sozinho. Abra-o como **Source file** e execute: o console deve mostrar `18 testes de movimento e colisao aprovados.`
 
-A pasta [testes-simulador/](testes-simulador/) tem mais 34 casos, todos aprovados, e uma partida completa (rebatidas, game over e reinício), executados com o binário do `pong.s` montado pelo LLVM em RV32I num simulador em Python. O [TESTES_SIMULADOR.md](testes-simulador/TESTES_SIMULADOR.md) explica como reproduzir.
+A pasta [testes-automaticos/](testes-automaticos/) tem mais 34 casos, todos aprovados, e uma partida completa (rebatidas, game over e reinício), executados com o binário do `pong.s` montado pelo LLVM em RV32I num simulador em Python. O [TESTES_SIMULADOR.md](testes-automaticos/TESTES_SIMULADOR.md) explica como reproduzir.
 
 Medições no Ripes v2.2.6-75-g183291e, em RV32I. Os números incluem a preparação, a chamada, o retorno e a saída do programa de medição:
 
@@ -69,7 +69,7 @@ Para repetir, abra um arquivo de [benchmarks/](benchmarks/) como **Source file**
 | [benchmarks/](benchmarks/) | Sete programas curtos de medição |
 | [.ripes-testes/](.ripes-testes/) | 20 programas de teste e as saídas do Ripes |
 | [testes/testes.s](testes/testes.s) | 18 casos de `passo` em um único arquivo |
-| [testes-simulador/](testes-simulador/) | 34 testes automáticos, partida completa, imagens, GIF e console |
+| [testes-automaticos/](testes-automaticos/) | 34 testes automáticos, partida completa, imagens, GIF e console |
 | [docs/testes/](docs/testes/) | Capturas e registros de execução |
 | [docs/desempenho/](docs/desempenho/) | Contadores e dados da compilação C |
 | [c-reference/pong.c](c-reference/pong.c) | Referência em C |
