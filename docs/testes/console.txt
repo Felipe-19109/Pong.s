@@ -1,0 +1,31 @@
+rebatida_centro / RV32_SS
+Pontos: 1
+
+Program exited with code: 0
+
+rebatida_ponta / RV32_SS
+Pontos: 3
+
+Program exited with code: 0
+
+game_over / RV32_SS
+GAME OVER! Pontos: 3
+Solte os botoes e aperte uma seta para reiniciar.
+
+Program exited with code: 0
+
+rebatida_centro / RV32_5S
+Pontos: 1
+
+Program exited with code: 0
+
+rebatida_ponta / RV32_5S
+Pontos: 3
+
+Program exited with code: 0
+
+game_over / RV32_5S
+GAME OVER! Pontos: 3
+Solte os botoes e aperte uma seta para reiniciar.
+
+Program exited with code: 0

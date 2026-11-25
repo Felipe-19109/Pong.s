@@ -1,0 +1,172 @@
+[
+  {
+    "caso": "passo/livre",
+    "aprovado": true,
+    "detalhe": "esperado [16, 13, -1, 1, 10, 0, 1], obtido [16, 13, -1, 1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/raquete_sobe",
+    "aprovado": true,
+    "detalhe": "esperado [16, 13, -1, 1, 9, 0, 1], obtido [16, 13, -1, 1, 9, 0, 1]"
+  },
+  {
+    "caso": "passo/raquete_desce",
+    "aprovado": true,
+    "detalhe": "esperado [16, 13, -1, 1, 11, 0, 1], obtido [16, 13, -1, 1, 11, 0, 1]"
+  },
+  {
+    "caso": "passo/cima_e_baixo_juntos",
+    "aprovado": true,
+    "detalhe": "esperado [16, 13, -1, 1, 10, 0, 1], obtido [16, 13, -1, 1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/raquete_limite_topo",
+    "aprovado": true,
+    "detalhe": "esperado [16, 13, -1, 1, 1, 0, 1], obtido [16, 13, -1, 1, 1, 0, 1]"
+  },
+  {
+    "caso": "passo/raquete_limite_baixo",
+    "aprovado": true,
+    "detalhe": "esperado [16, 13, -1, 1, 19, 0, 1], obtido [16, 13, -1, 1, 19, 0, 1]"
+  },
+  {
+    "caso": "passo/parede_cima",
+    "aprovado": true,
+    "detalhe": "esperado [11, 2, 1, 1, 10, 0, 1], obtido [11, 2, 1, 1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/parede_baixo",
+    "aprovado": true,
+    "detalhe": "esperado [11, 22, 1, -1, 10, 0, 1], obtido [11, 22, 1, -1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/parede_direita",
+    "aprovado": true,
+    "detalhe": "esperado [32, 11, -1, 1, 10, 0, 1], obtido [32, 11, -1, 1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/canto_superior_direito",
+    "aprovado": true,
+    "detalhe": "esperado [32, 2, -1, 1, 10, 0, 1], obtido [32, 2, -1, 1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/rebatida_centro",
+    "aprovado": true,
+    "detalhe": "esperado [2, 12, 1, 1, 10, 1, 1], obtido [2, 12, 1, 1, 10, 1, 1]"
+  },
+  {
+    "caso": "passo/rebatida_primeira_linha",
+    "aprovado": true,
+    "detalhe": "esperado [2, 10, 1, 1, 10, 1, 1], obtido [2, 10, 1, 1, 10, 1, 1]"
+  },
+  {
+    "caso": "passo/rebatida_ultima_linha",
+    "aprovado": true,
+    "detalhe": "esperado [2, 14, 1, 1, 10, 3, 1], obtido [2, 14, 1, 1, 10, 3, 1]"
+  },
+  {
+    "caso": "passo/bola_passa_acima",
+    "aprovado": true,
+    "detalhe": "esperado [1, 9, -1, 1, 10, 0, 1], obtido [1, 9, -1, 1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/bola_passa_abaixo",
+    "aprovado": true,
+    "detalhe": "esperado [1, 15, -1, 1, 10, 0, 1], obtido [1, 15, -1, 1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/game_over",
+    "aprovado": true,
+    "detalhe": "esperado [0, 9, -1, 1, 10, 3, 0], obtido [0, 9, -1, 1, 10, 3, 0]"
+  },
+  {
+    "caso": "passo/partida_encerrada",
+    "aprovado": true,
+    "detalhe": "esperado [0, 9, -1, 1, 10, 3, 0], obtido [0, 9, -1, 1, 10, 3, 0]"
+  },
+  {
+    "caso": "passo/bola_indo_direita_col1",
+    "aprovado": true,
+    "detalhe": "esperado [2, 13, 1, 1, 10, 0, 1], obtido [2, 13, 1, 1, 10, 0, 1]"
+  },
+  {
+    "caso": "passo/rebatida_com_parede",
+    "aprovado": true,
+    "detalhe": "esperado [2, 2, 1, 1, 1, 1, 1], obtido [2, 2, 1, 1, 1, 1, 1]"
+  },
+  {
+    "caso": "passo/raquete_move_e_rebate",
+    "aprovado": true,
+    "detalhe": "esperado [2, 9, 1, -1, 9, 1, 1], obtido [2, 9, 1, -1, 9, 1, 1]"
+  },
+  {
+    "caso": "pixel_primeiro",
+    "aprovado": true,
+    "detalhe": "indice 0"
+  },
+  {
+    "caso": "pixel_ultimo",
+    "aprovado": true,
+    "detalhe": "indice 874"
+  },
+  {
+    "caso": "pixel_meio",
+    "aprovado": true,
+    "detalhe": "indice 437"
+  },
+  {
+    "caso": "ler_botoes_soltos",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "ler_botoes_direita",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "esperar_controle_cima",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "esperar_controle_baixo",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "esperar_controle_dois",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "esperar_controle_ignora_esquerda",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "desenhar_tela_completa",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "apagar_moveis_mantem_bordas",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "bola_magenta_no_game_over",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "iniciar_estado",
+    "aprovado": true,
+    "detalhe": ""
+  },
+  {
+    "caso": "mutacao_detectada (addi t5,t0,4 -> 3)",
+    "aprovado": true,
+    "detalhe": ""
+  }
+]
